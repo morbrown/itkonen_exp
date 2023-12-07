@@ -14,35 +14,35 @@ function shuffle(array) {
 
   // Define your filler stimuli
 const fillers_basic = [
-  { noun: "pallo", stim: "Pekka ei heittänyt _", expected: "palloa", type: "basic"},
-  { noun: "avain", stim: "Arto etsii _", expected: "avainta", type: "basic"},
-  { noun: "kirja", stim: "Antti on lukemassa _", expected: "kirjaa", type: "basic"},
-  { noun: "kirje", stim: "Helmi ei taittanut _", expected: "kirjettä", type: "basic"},
-  { noun: "sanomalehti", stim: "Kerttu on lukemassa _", expected: "sanomalehteä", type: "basic"},
-  { noun: "puhelin", stim: "Elsi ei sulkenut _", expected: "puhelinta", type: "basic"},
-  { noun: "taikasauva", stim: "Toivo heilutti _", expected: "taikasauvaa", type: "basic"},
-  { noun: "korvakoru", stim: "Matti ei ostanut _", expected: "korvakorua", type: "basic"},
-  { noun: "vispilä", stim: "Mikko ei käyttänyt _", expected: "vispilää", type: "basic"},
-  { noun: "silitysrauta", stim: "Venla pyöritti _", expected: "silitysrautaa", type: "basic"},
-  { noun: "ananas", stim: "Pihla on syömässä _", expected: "ananasta", type: "basic"},
-  { noun: "kampa", stim: "Oona ei pudottanut _", expected: "kampaa", type: "basic"}
+  { noun: "pallo", stim: "Pekka ei heittänyt ___", expected: "palloa", type: "basic"},
+  { noun: "avain", stim: "Arto etsii ___", expected: "avainta", type: "basic"},
+  { noun: "kirja", stim: "Antti on lukemassa ___", expected: "kirjaa", type: "basic"},
+  { noun: "kirje", stim: "Helmi ei taittanut ___", expected: "kirjettä", type: "basic"},
+  { noun: "sanomalehti", stim: "Kerttu on lukemassa ___", expected: "sanomalehteä", type: "basic"},
+  { noun: "puhelin", stim: "Elsi ei sulkenut ___", expected: "puhelinta", type: "basic"},
+  { noun: "taikasauva", stim: "Toivo heilutti ___", expected: "taikasauvaa", type: "basic"},
+  { noun: "korvakoru", stim: "Matti ei ostanut ___", expected: "korvakorua", type: "basic"},
+  { noun: "vispilä", stim: "Mikko ei käyttänyt ___", expected: "vispilää", type: "basic"},
+  { noun: "silitysrauta", stim: "Venla pyöritti ___", expected: "silitysrautaa", type: "basic"},
+  { noun: "ananas", stim: "Pihla on syömässä ___", expected: "ananasta", type: "basic"},
+  { noun: "kampa", stim: "Oona ei pudottanut ___", expected: "kampaa", type: "basic"}
 ]
   
 
   const fillers_exploratory = [ 
-    { noun: "auto", eng: "car", stim: "Pekka myi polkupyöränsä ostaakseen _", expected: "auton", type: "rationale"},
-    { noun: "skootteri", eng: "scooter", stim: "Arton täytyi myydä polkupyöränsä ostaakseen _", type: "rationale"},
-    { noun: "pöytä", eng: "table", stim: "Antti sahasi lautaa rakentaakseen _", expected: "pöydän", type: "rationale"},
-    { noun: "tuoli", eng: "chair", stim: "Helmin täytyi sahata lautaa rakentaakseen _", type: "rationale"},
-    { noun: "huivi", eng: "scarf", stim: "Kerttu osti lankaa korjatakseen _", expected: "huivin", type: "rationale"},
-    { noun: "pusero", eng: "blouse", stim: "Elsin täytyi ostaa lankaa korjatakseen _", type: "rationale"},
+    { noun: "auto", eng: "car", stim: "Pekka myi polkupyöränsä ostaakseen ___", expected: "auton", type: "rationale"},
+    { noun: "skootteri", eng: "scooter", stim: "Arton täytyi myydä polkupyöränsä ostaakseen ___", type: "rationale"},
+    { noun: "pöytä", eng: "table", stim: "Antti sahasi lautaa rakentaakseen ___", expected: "pöydän", type: "rationale"},
+    { noun: "tuoli", eng: "chair", stim: "Helmin täytyi sahata lautaa rakentaakseen ___", type: "rationale"},
+    { noun: "huivi", eng: "scarf", stim: "Kerttu osti lankaa korjatakseen ___", expected: "huivin", type: "rationale"},
+    { noun: "pusero", eng: "blouse", stim: "Elsin täytyi ostaa lankaa korjatakseen ___", type: "rationale"},
   
-    { noun: "skootteri", eng: "scooter", stim: "Toivo huomasi Matin rikkoneen _", expected: "skootterin", type: "VA"},
-    { noun: "auto", eng: "car", stim: "Mikon täytyi huomata Venlan rikkoneen _", type: "VA"},
-    { noun: "tuoli", stim: "Kerttu muistaa Elsin ostaneen _", expected: "tuolin", type: "VA"},
-    { noun: "pöytä", stim: "Pihlan täytyy muistaa Oonan ostaneen _", type: "VA"},
-    { noun: "pusero", stim: "Pekka aavisti Arton varastaneen _", expected: "puseron", type: "VA"},
-    { noun: "huivi", stim: "Antin täytyy aavistaa Helmin varastaneen _", type: "VA"}
+    { noun: "skootteri", eng: "scooter", stim: "Toivo huomasi Matin rikkoneen ___", expected: "skootterin", type: "VA"},
+    { noun: "auto", eng: "car", stim: "Mikon täytyi huomata Venlan rikkoneen ___", type: "VA"},
+    { noun: "tuoli", stim: "Kerttu muistaa Elsin ostaneen ___", expected: "tuolin", type: "VA"},
+    { noun: "pöytä", stim: "Pihlan täytyy muistaa Oonan ostaneen ___", type: "VA"},
+    { noun: "pusero", stim: "Pekka aavisti Arton varastaneen ___", expected: "puseron", type: "VA"},
+    { noun: "huivi", stim: "Antin täytyy aavistaa Helmin varastaneen ___", type: "VA"}
 
 ];
 
@@ -109,7 +109,7 @@ const filler_nouns = [
     const sentences = [];
   
     for (const dict of listDicts) {
-      let stim = '_';
+      let stim = '___';
       const embeddedV = [embedded[Math.floor(Math.random() * embedded.length)]];
       stim = embeddedV[0] + ' ' + stim;
       const genName = [genNames[Math.floor(Math.random() * genNames.length)]];
@@ -131,7 +131,7 @@ const filler_nouns = [
     const sentences = [];
   
     for (const dict of listDicts) {
-      let stim = '_';
+      let stim = '___';
       const embeddedV = [embedded[Math.floor(Math.random() * embedded.length)]];
       stim = embeddedV[0] + ' ' + stim;
       const genName = [genNames[Math.floor(Math.random() * genNames.length)]];
@@ -191,14 +191,17 @@ function createSurveyTrial(index) {
   const stimulus = shuffledAllStims[index];
 
   // Generate HTML for the preamble with an image
-  const preambleHTML = `<img src="images/${stimulus.noun}.png" height="300">`;
+  const preambleHTML = ` <p><font size="10">${stimulus.stim}</font></p> 
+  <img src="images/${stimulus.noun}.png" height="300">`;
 
   return {
     type: jsPsychSurveyText,
-    preamble: preambleHTML,
+    /* preamble: preambleHTML, */
     questions: [
       {
-        prompt: stimulus.stim,
+        /* prompt: stimulus.stim, */
+        prompt: preambleHTML ,
+        
         placeholder: 'Kirjoita vastauksesi tähän ...',
       },
     ],
