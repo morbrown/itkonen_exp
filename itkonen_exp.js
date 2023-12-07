@@ -1,137 +1,4 @@
-// function shuffle(array) {
-//     var currentIndex = array.length, randomIndex;
-  
-//     while (currentIndex != 0) {
-//       randomIndex = Math.floor(Math.random() * currentIndex);
-//       currentIndex--;
-  
-//       [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-//     }
-  
-//     return array;
-//   }
-  
-//   const nouns = [
-//     { noun: "pallo", eng: "ball", freq: "high_frequency", stem: "no_stem_change" },
-//     { noun: "avain", eng: "key", freq: "high_frequency", stem: "stem_change" },
-//     { noun: "hammasharja", eng: "toothbrush", freq: "low_frequency", stem: "no_stem_change" },
-//     { noun: "jakoavain", eng: "wrench", freq: "low_frequency", stem: "stem_change" }
-//   ];
-  
-//   const embedded = ['lose', 'forget'];
-  
-//   const embeddingAct = ['thought', 'said', 'knew'];
-  
-//   const embeddingPass = ['was.thought', 'was.said', 'was.known'];
-  
-//   const locs = ['in.village', 'in.town', 'in.neighborhood'];
-  
-//   const nomNames = ["Pekka", "Arto", "Helvi", "Antti", "Otto", "Kari"];
-  
-//   const genNames = ["Eeron", "Matin", "Mikon", "Tuulin", "Jorman", "Jaanan"];
-  
-//   let shuffledNouns = [...nouns];
-//   shuffle(shuffledNouns);
-  
-//   console.log('Shuffled Nouns:', shuffledNouns);
-  
-//   const nounsActive = shuffledNouns.slice(0, 2);
-//   const nounsPassive = shuffledNouns.slice(2);
-  
-//   function makeActiveStims(listDicts) {
-//     const sentences = [];
-  
-//     for (const dict of listDicts) {
-//       let stim = '_';
-//       const embeddedV = [embedded[Math.floor(Math.random() * embedded.length)]];
-//       stim = embeddedV[0] + ' ' + stim;
-//       const genName = [genNames[Math.floor(Math.random() * genNames.length)]];
-//       stim = genName[0] + ' ' + stim;
-//       const embedding = [embeddingAct[Math.floor(Math.random() * embeddingAct.length)]];
-//       stim = embedding[0] + ' ' + stim;
-//       const nomName = [nomNames[Math.floor(Math.random() * nomNames.length)]];
-//       stim = nomName[0] + ' ' + stim;
-//       sentences.push(stim);
-//     }
-  
-//     return sentences;
-//   }
-  
-//   const activeSentences = makeActiveStims(nounsActive);
-//   console.log('Active Sentences:', activeSentences);
-  
-//   function makePassiveStims(listDicts) {
-//     const sentences = [];
-  
-//     for (const dict of listDicts) {
-//       let stim = '_';
-//       const embeddedV = [embedded[Math.floor(Math.random() * embedded.length)]];
-//       stim = embeddedV[0] + ' ' + stim;
-//       const genName = [genNames[Math.floor(Math.random() * genNames.length)]];
-//       stim = genName[0] + ' ' + stim;
-//       const embedding = [embeddingPass[Math.floor(Math.random() * embeddingPass.length)]];
-//       stim = embedding[0] + ' ' + stim;
-//       const prep = [locs[Math.floor(Math.random() * locs.length)]];
-//       stim = prep[0] + ' ' + stim;
-//       sentences.push(stim);
-//     }
-  
-//     return sentences;
-//   }
-  
-//   const passiveSentences = makePassiveStims(nounsPassive);
-//   console.log('Passive Sentences:', passiveSentences);
-  
-//   function makeAllStims(list1, list2) {
-//     const allSentences = makeActiveStims(list1).concat(makePassiveStims(list2));
-//     return allSentences;
-//   }
-  
-//   const allSentences = makeAllStims(nounsActive, nounsPassive);
-//   console.log('All Sentences:', allSentences);
-  
-
-
-// const jsPsychOptions = {
-//     on_finish: function () {
-//       jsPsych.data.displayData('csv');
-//     }
-//   };
-  
-//   const jsPsych = initJsPsych(jsPsychOptions);
-  
-// // const stimuli = createStimuli(names, verbs);
-
-// // Shuffle the order of stimuli
-// const shuffledStimuli = jsPsych.randomization.shuffle([...allSentences]);
-
-// function createStimuliTrial(index) {
-//   const stimulus = shuffledStimuli[index];
-
-
-  
-//     return {
-//       type: jsPsychHtmlKeyboardResponse,
-//       stimulus: stimulus,
-//       choices: "NO KEYS",
-//       trial_duration: 5000, // Display stimuli for 2000 milliseconds (adjust as needed)
-//       post_trial_gap: 1000, // Add a gap of 500 milliseconds between trials (adjust as needed)
-//     };
-//   }
-  
-//   // Build timeline using createStimuli function
-//   let timeline = [];
-//   for (let i = 0; i < shuffledStimuli.length; i++) {
-//     timeline.push(createStimuliTrial(i));
-//   }
-  
-//   // Run the experiment
-//   jsPsych.run(timeline);
-
-// ~~~~Above version of experiment works ~~~
-
-
-  
+ 
 function shuffle(array) {
     var currentIndex = array.length, randomIndex;
   
@@ -165,8 +32,8 @@ const fillers_basic = [
   const fillers_exploratory = [ 
     { noun: "auto", eng: "car", stim: "Pekka myi polkupyöränsä ostaakseen _", expected: "auton", type: "rationale"},
     { noun: "skootteri", eng: "scooter", stim: "Arton täytyi myydä polkupyöränsä ostaakseen _", type: "rationale"},
-    { noun: "pöytä", eng: "table", stim: "Antti sahasi lankkuja rakentaakseen _", expected: "pöydän", type: "rationale"},
-    { noun: "tuoli", eng: "chair", stim: "Helmin täytyi sahata lankkuja rakentaakseen _", type: "rationale"},
+    { noun: "pöytä", eng: "table", stim: "Antti sahasi lautaa rakentaakseen _", expected: "pöydän", type: "rationale"},
+    { noun: "tuoli", eng: "chair", stim: "Helmin täytyi sahata lautaa rakentaakseen _", type: "rationale"},
     { noun: "huivi", eng: "scarf", stim: "Kerttu osti lankaa korjatakseen _", expected: "huivin", type: "rationale"},
     { noun: "pusero", eng: "blouse", stim: "Elsin täytyi ostaa lankaa korjatakseen _", type: "rationale"},
   
@@ -345,24 +212,38 @@ function createSurveyTrial(index) {
 
 const irb = {
   type: jsPsychHtmlButtonResponse,
-  stimulus: `<center> <img src = "stimuli/alpslogo.png" height = 200> <p> <font size="4"> \ 
-  We invite you to our research study on language production. \
-  <br> Your experimenter will ask you to do a linguistic task, such as recording descriptions of images.</p> `,
-  prompt: `<br><br><font size = "2"> LEGAL INFORMATION: <br> There are no risks or benefits of any kind involved in this study. \
-  You will be paid for your participation at the posted rate. If you have read this form and have decided \
-  to participate in this experiment, please understand your participation is voluntary and you have the right to \
-  withdraw your consent or discontinue participation at anytime without penalty or loss of benefits to which you \
-  are otherwise entitled. You have the right to refuse to do particular tasks. Your individual privacy will be \
-  maintained in all published and written data resulting from the study. You may print this form for your records.\
-  <br><br>CONTACT INFORMATION: \
-  <br>If you have any questions, concerns or complaints about this research study, its procedures, risks and benefits, \
-  you should contact the Protocol Director Meghan Sumner at (650)-725-9336. If you are not satisfied with how this study \
-  is being conducted, or if you have any concerns, complaints, or general questions about the research or your rights as a \
-  participant, please contact the Stanford Institutional Review Board (IRB) to speak to someone independent of the research \
-  team at (650)-723-2480 or toll free at 1-866-680-2906. You can also write to the Stanford IRB, Stanford University, 3000 \
-  El Camino Real, Five Palo Alto Square, 4th Floor, Palo Alto, CA 94306 USA.<br><br>`,
+  stimulus: `<center> <img src = "images/alpslogo.png" height = 100> <p> <font size="3"> \ 
+  KIELEN TUOTTAMISEN JA YMMÄRTÄMISEN KOKEELLINEN TUTKIMUS <br> \
+  Tutkimusprotokollan vastuuhenkilöt: Meghan Sumner <br>\
+  Pyydämme Sinua osallistumaan kielen tuottamista ja ymmärtämistä koskevaan kokeelliseen tutkimukseen. \
+  Kokeessa Sinulle annetaan kielellisiä tehtäviä, joissa Sinua pyydetään esimerkiksi lukemaan lauseita tai sanoja, 
+  nimeämään kuvia tai kuvailemaan tilanteita, muodostamaan lauseita itse, 
+  tai osallistumaan yksinkertaisiin kielellisiin peleihin toisen koehenkilön kanssa. \
+  Tähän tutkimukseen ei liity minkäänlaisia riskejä.</p> 
+  <p> Kokeen suorittaja voi pyytää lupaa kerätä tietoa silmiesi liikkeistä, tallentaa ääntäsi nauhalle, \
+  tai kuvata Sinua videolle. \
+  Mikäli näin tehdään, nimeäsi ei yhdistetä syntyviin tallenteisiin \
+  ja tallenteet tulevat ainoastaan tämän tutkimuksen tekijöiden käyttöön. Mikäli haluat sallia tallentamisen, \
+  ilmoita siitä tutkimuksen suorittajalle.</p>
+  <p>
+  Jos olet lukenut tämän lomakkeen ja päättänyt osallistua tässä kuvailtuun kokeelliseen tutkimukseen, \
+  muista, että osallistumisesi on vapaaehtoista ja Sinulla on oikeus kieltäytyä kokeesta ja keskeyttää 
+  osallistumisesi milloin tahansa ilman että tästä seuraa minkäänlaista rangaistusta tai Sinulle kuuluvien etujen menettämistä. 
+  Sinulla on oikeus kieltäytyä osatehtävistä niin halutessasi. Tutkimuksesta syntyvää tietoa käsitellään julkaisuissa 
+  ja kirjallisissa raporteissa luottamuksellisesti niin, ettei yksittäisen henkilön tuloksia voida tunnistaa.  </p>`,
+  prompt: `<br><font size = "2"> YHTEYSTIEDOT: <br> Jos Sinulla on kysymyksiä, huolenaiheita, \
+  tai valituksia, jotka liittyvät tähän tutkimukseen, siinä käytettäviin tutkimusmenetelmiin, \
+  tai siihen liittyviin riskeihin ja etuihin, \
+  ota yhteyttä jompaankumpaan tutkimusprotokollan vastuuhenkilöstä: Meghan Sumner 650-732-4230.\
+  <br>Jos et ole tyytyväinen tämän tutkimuksen suorittamistapaan, tai jos Sinulla on huolenaiheita, \
+  valituksia, tai kysymyksiä, jotka liittyvät tähän tutkimukseen tai oikeuksiisi koehenkilönä, \
+  voit ottaa yhteyttä Stanfordin yliopiston Institutional Review Boardiin (IRB) \
+  ja keskustella tutkimusryhmästä riippumattoman henkilön kanssa. \
+  Voit tehdä tämän soittamalla numeroon (650)-723-2480 tai maksuttomaan palvelunumeroon 1-866-680-2906. \
+  Voit tehdä saman kirjallisesti lähettämällä kirjeen osoitteeseen Stanford IRB, \
+  Stanford University, 1705 El Camino Real, Floor, Palo Alto, CA 94306 USA.<br><br>`,
   
-  choices: ['Continue']
+  choices: ["Jatka"]
 };
 
 const instructions_trainNouns = {
