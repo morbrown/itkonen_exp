@@ -256,7 +256,7 @@ const instructions_trainNouns = {
   stimulus: 
   "Tämä koe koostuu kahdesta osasta. <br> \
   Ensin näet kuvia esineistä ja opit niiden nime. <br> \
-  Sitten näet epätäydellisiä lauseita ja täydennät ne täyttämällä tyhjän kohdan. <br> \
+  Sitten näet 48 epätäydellisiä lauseita ja täydennät ne täyttämällä tyhjän kohdan. <br> \
   Siirrymme nyt ensimmäiseen osaan: esineiden nimien oppiminen. <br><br>",
   choices: ["Jatka"]
 };
