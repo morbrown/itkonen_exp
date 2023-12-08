@@ -192,7 +192,7 @@ function createSurveyTrial(index) {
 
   // Generate HTML for the preamble with an image
   const preambleHTML = ` <p><font size="10">${stimulus.stim}</font></p> 
-  <img src="images/${stimulus.noun}.png" height="300">`;
+  <img src="images/${stimulus.noun}.png" height="300"><br><br>`;
 
   return {
     type: jsPsychSurveyText,
@@ -201,7 +201,8 @@ function createSurveyTrial(index) {
       {
         /* prompt: stimulus.stim, */
         prompt: preambleHTML ,
-        
+        required: true,
+        required_error: "Täydennä lause",
         placeholder: 'Kirjoita vastauksesi tähän ...',
       },
     ],
@@ -233,7 +234,8 @@ const irb = {
   muista, että osallistumisesi on vapaaehtoista ja Sinulla on oikeus kieltäytyä kokeesta ja keskeyttää 
   osallistumisesi milloin tahansa ilman että tästä seuraa minkäänlaista rangaistusta tai Sinulle kuuluvien etujen menettämistä. 
   Sinulla on oikeus kieltäytyä osatehtävistä niin halutessasi. Tutkimuksesta syntyvää tietoa käsitellään julkaisuissa 
-  ja kirjallisissa raporteissa luottamuksellisesti niin, ettei yksittäisen henkilön tuloksia voida tunnistaa.  </p>`,
+  ja kirjallisissa raporteissa luottamuksellisesti niin, ettei yksittäisen henkilön tuloksia voida tunnistaa. \
+  Saat osallistumisestasi ilmoitetun suuruisen korvauksen. </p>`,
   prompt: `<br><font size = "2"> YHTEYSTIEDOT: <br> Jos Sinulla on kysymyksiä, huolenaiheita, \
   tai valituksia, jotka liittyvät tähän tutkimukseen, siinä käytettäviin tutkimusmenetelmiin, \
   tai siihen liittyviin riskeihin ja etuihin, \
@@ -255,7 +257,7 @@ const instructions_trainNouns = {
   "Tämä koe koostuu kahdesta osasta. <br> \
   Ensin näet kuvia esineistä ja opit niiden nime. <br> \
   Sitten näet epätäydellisiä lauseita ja täydennät ne täyttämällä tyhjän kohdan. <br> \
-  Siirrymme nyt ensimmäiseen osaan: esineiden nimien oppiminen.",
+  Siirrymme nyt ensimmäiseen osaan: esineiden nimien oppiminen. <br><br>",
   choices: ["Jatka"]
 };
 
@@ -266,7 +268,7 @@ var trainNouns = {
       stimulus: function(){
           // var html is displaying the name of the noun and then its image
           var html =  `<p><font size="10">${jsPsych.timelineVariable('noun')}</font></p> 
-          <img src = "images/${jsPsych.timelineVariable('noun')}.png" height = 300>`;
+          <img src = "images/${jsPsych.timelineVariable('noun')}.png" height = 300><br><br>`;
           // var html line is displaying name of noun and then its image. We have relative path to image above. My questions is where jsPsych.timelineVariable is 
           // defined?
           return html;
@@ -281,7 +283,7 @@ var trainNouns = {
 const instructions_mainexp = {
   type: jsPsychHtmlButtonResponse,
   stimulus: "Hienoa. Siinä olivat kaikki esineet! Kokeen toisessa osassa näet esineen kuvan ja epätäydellisen lauseen. <br> \
-  Tehtäväsi on täydentää lause esinettä tarkoittavalla sanalla kirjoittamalla annettuun tekstikenttään.",
+  Tehtäväsi on täydentää lause esinettä tarkoittavalla sanalla kirjoittamalla annettuun tekstikenttään.<br><br>",
   choices: ["Jatka"]
 };
 
@@ -291,7 +293,7 @@ var exitSurvey = {
     [
       {
         type: 'html',
-        prompt: `<center> <img src = "stimuli/alpslogo.png" height = 200> <br> Kiitos kokeeseen osallistumisesta! <br> \
+        prompt: `<center> <img src = "images/alpslogo.png" height = 100> <br> Kiitos kokeeseen osallistumisesta! <br> \
          Seuraaviin kysymyksiin vastaaminen on vapaaehtoista, mutta auttaa meitä vastaustesi tulkinnassa.
         <br> Kun olet valmis, paina "Lähetä" näytön alareunassa. <br> `,
       },
