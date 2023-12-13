@@ -76,7 +76,7 @@ const filler_nouns = [
     { noun: "vispil\u00e4", eng: "whisk", freq: "low_frequency", stem: "no_stem_change" },
     { noun: "ruuvimeisseli", eng: "screwdriver", freq: "low_frequency", stem: "no_stem_change" },
     { noun: "kampa", eng: "comb", freq: "low_frequency", stem: "stem_change" },
-    { noun: "huistenkuivain", eng: "hair_dryer", freq: "low_frequency", stem: "stem_change" },
+    { noun: "hiustenkuivain", eng: "hair_dryer", freq: "low_frequency", stem: "stem_change" },
     { noun: "silitysrauta", eng: "clothes_iron", freq: "low_frequency", stem: "stem_change" },
     { noun: "tupakansytytin", eng: "cigarette_lighter", freq: "low_frequency", stem: "stem_change" },
     { noun: "ananas", eng: "pineapple", freq: "low_frequency", stem: "stem_change" }
